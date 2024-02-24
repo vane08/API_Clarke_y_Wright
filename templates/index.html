@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agregar Ciudad</title>
+    <!-- Agrega los enlaces a las bibliotecas de Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body  style="background-color: rgb(231, 163, 236);">
+    <div class="container mt-5" style="background-color: rgb(163, 236, 185);">
+        <h1 class="text-center">Agregar Ciudad</h1>
+        <form method="POST">
+            <div class="row">
+                <div class="col-6">
+                    <div class="form-group">
+                        <label for="ciudad">Ciudad:</label>
+                        <input type="text" class="form-control" id="ciudad" name="ciudad" required>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="form-group">
+                        <label for="latitud">Latitud:</label>
+                        <input type="number" class="form-control" id="latitud" name="latitud" step="any" required>
+                    </div> 
+                </div>
+                <div class="col-6">
+                    <div class="form-group">
+                        <label for="longitud">Longitud:</label>
+                        <input type="number" class="form-control" id="longitud" name="longitud" step="any" required>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="form-group">
+                        <label for="paquetes">Cantidad de Paquetes:</label>
+                        <input type="number" class="form-control" id="paquetes" name="paquetes" required>
+                    </div>
+                </div>
+                <div class="col-12 d-grid gap-2 d-md-flex justify-content-md-end p-4">
+                    <button type="submit" class="btn btn-outline-dark">Guardar Ciudad</button>
+                </div>
+            </div>  
+        </form>
+
+        {% if rutas %}
+            <h2 class="text-center">Mejor Ruta:</h2>
+            <ul class="list-group">
+                {% for ruta in rutas %}
+                    <li class="list-group-item">Ruta: {{ ruta }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    </div>
+</body>
+</html>
